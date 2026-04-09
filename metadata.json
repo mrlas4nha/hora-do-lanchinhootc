@@ -1,0 +1,7 @@
+{
+  "name": "Hora do lanchinho otc",
+  "description": "Terminal de Trading Profissional com análise institucional (SMC/ICT) via Gemini AI e captura de tela para análise de gráficos externos.",
+  "requestFramePermissions": [
+    "display-capture"
+  ]
+}
