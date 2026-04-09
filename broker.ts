@@ -138,6 +138,10 @@ export class BrokerService extends EventEmitter {
     console.log('SSID set manually.');
   }
 
+  getSSID(): string | null {
+    return this.ssid;
+  }
+
   async connect(): Promise<void> {
     if (!this.ssid) throw new Error('Not logged in');
     if (this.isConnected && this.ws?.readyState === WebSocket.OPEN) return;

@@ -16,7 +16,10 @@ async function startServer() {
   app.post("/api/broker/login", async (req, res) => {
     try {
       const { email, password, baseUrl } = req.body;
-      const ssid = await broker.login(email, password, baseUrl);
+      let ssid = broker.getSSID();
+      if (!ssid || ssid === "COLE_SEU_SSID_AQUI") {
+        ssid = await broker.login(email, password, baseUrl);
+      }
       await broker.connect();
       res.json({ success: true, ssid });
     } catch (error: any) {
